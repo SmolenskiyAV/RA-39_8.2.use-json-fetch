@@ -7,6 +7,8 @@ import useJsonFetch from '../Hooks/useJsonFetch';
 export default function Data() {  // КОМПОНЕНТ Формы
 
     const { data } = useJsonFetch('http://localhost:7070/data');
+    
+    if (data) console.log('data is:', data);  // КОНТРОЛЬНАЯ ТОЧКА
 
     return (
         <>

@@ -47,7 +47,7 @@ export default function Form() {  // КОМПОНЕНТ Формы
         <button onClick={handleClick} id='loading'>loading</button>
       </div>
       <div>
-        <p>by click data is: {data}</p>
+        <p>by click data is: {JSON.stringify(data && data)}</p>
         <p>by click error is: {error}</p>
       </div>
 

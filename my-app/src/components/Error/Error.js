@@ -1,4 +1,3 @@
-import React from "react";
 import useJsonFetch from '../Hooks/useJsonFetch';
 
 // import PropTypes from "prop-types";
@@ -7,6 +6,10 @@ import useJsonFetch from '../Hooks/useJsonFetch';
 export default function Error() {  // КОМПОНЕНТ Формы
 
     const { error } = useJsonFetch('http://localhost:7070/error');
+
+    if (error) {
+        console.log('error is:', error);    // КОНТРОЛЬНАЯ ТОЧКА
+    };
 
     return (
         <>

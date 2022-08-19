@@ -17,16 +17,18 @@ const useJsonFetch = (url, options) => {    // хук для fetch-запрос�
         setStatus({ loading: false, data: response.data });
       })
       .catch((error) => {   // перехват ошибки
-        setStatus({ loading: false, error });
+        setStatus({ loading: false, error: error });
       });
-  }
+  };
 
   useEffect(() => {
     if (url) {
       setUrlFetch(url, options);
+      console.log('return data is: ', status.data); // КОНТРОЛЬНАЯ ТОЧКА
+      console.log('return error is: ', status.error); // КОНТРОЛЬНАЯ ТОЧКА
     }
   }, []);
-
+  
   return { ...status, setUrlFetch };
 };
 export default useJsonFetch;
